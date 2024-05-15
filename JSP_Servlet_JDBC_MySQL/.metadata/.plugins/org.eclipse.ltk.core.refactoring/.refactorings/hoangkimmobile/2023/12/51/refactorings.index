@@ -1,0 +1,33 @@
+1703261912945	Delete element
+1703262274390	Delete element
+1703265020775	Move 'header' to 'jsp'
+1703265034966	Move 'footer' to 'jsp'
+1703265334274	Move 'header' to 'common'
+1703265339216	Move 'footer' to 'common'
+1703356840871	Copy files
+1703356851032	Delete element
+1703356942727	Move 'addemailsuccess.jsp' to 'jsp'
+1703356946847	Move 'cart.jsp' to 'jsp'
+1703356949148	Move 'checkout.jsp' to 'jsp'
+1703356951040	Move 'forgotpassword.jsp' to 'jsp'
+1703356953249	Move 'home.jsp' to 'jsp'
+1703356955621	Move 'login.jsp' to 'jsp'
+1703356957642	Move 'mailsuccess.jsp' to 'jsp'
+1703356960049	Move 'product-detail.jsp' to 'jsp'
+1703356962336	Move 'profile.jsp' to 'jsp'
+1703356964856	Move 'register.jsp' to 'jsp'
+1703356967209	Move 'restorepassword.jsp' to 'jsp'
+1703356969481	Move 'success.jsp' to 'jsp'
+1703358747315	Move 'addemailsuccess.jsp' to 'WebContent'
+1703358751876	Move 'cart.jsp' to 'WebContent'
+1703358755378	Move 'checkout.jsp' to 'WebContent'
+1703358758895	Move 'forgotpassword.jsp' to 'WebContent'
+1703358761123	Move 'home.jsp' to 'WebContent'
+1703358762932	Move 'login.jsp' to 'WebContent'
+1703358765046	Move 'mailsuccess.jsp' to 'WebContent'
+1703358767116	Move 'product-detail.jsp' to 'WebContent'
+1703358769076	Move 'profile.jsp' to 'WebContent'
+1703358771040	Move 'register.jsp' to 'WebContent'
+1703358772877	Move 'restorepassword.jsp' to 'WebContent'
+1703358776934	Move 'success.jsp' to 'WebContent'
+1703358783156	Delete element

@@ -1,0 +1,17 @@
+
+Jan 25, 2024 10:43:06.99 NEW SESSION
+Jan 25, 2024 10:43:06.99 [1496:3604:0125/104306.985:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 25, 2024 11:35:03.58 [1496:3604:0125/113503.586:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+Jan 25, 2024 11:37:36.71 [1496:3604:0125/113736.712:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+Jan 25, 2024 12:30:10.90 [1496:3604:0125/123010.907:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 25, 2024 12:30:10.90 [1496:3604:0125/123010.907:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 25, 2024 12:30:10.90 [1496:3604:0125/123010.907:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+Jan 25, 2024 12:32:55.62 [1496:3604:0125/123255.623:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+Jan 25, 2024 12:33:39.56 [1496:3604:0125/123339.568:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+Jan 25, 2024 12:44:06.48 [1496:3604:0125/124406.487:ERROR:CONSOLE(1)] "Ignoring unauthorized client request from null", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+
+Jan 29, 2024 17:20:18.05 NEW SESSION
+Jan 29, 2024 17:20:18.05 [1800:18208:0129/172018.054:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Jan 29, 2024 22:47:39.66 NEW SESSION
+Jan 29, 2024 22:47:39.66 [15140:14636:0129/224739.653:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
