@@ -11,13 +11,13 @@ public class ProductMapper implements RowMapper<Product> {
 	public Product mapRow(ResultSet resultSet) {
 		try {
 			Product product = new Product();
-			product.setId(resultSet.getInt("product_id"));
-			product.setName(resultSet.getString("product_name"));
-			product.setDescription(resultSet.getString("product_des"));
-			product.setPrice(resultSet.getFloat("product_price"));
-			product.setSrc(resultSet.getString("product_img_source"));
-			product.setType(resultSet.getString("product_type"));
-			product.setBrand(resultSet.getString("product_brand"));
+			product.setId(resultSet.getInt("id"));
+			product.setName(resultSet.getString("name"));
+			product.setDescription(resultSet.getString("description"));
+			product.setPrice(resultSet.getFloat("price"));
+			product.setSrc(resultSet.getString("src"));
+			product.setType(resultSet.getString("type"));
+			product.setBrand(resultSet.getString("brand"));
 			return product;
 		} catch (SQLException e) {
 			return null;

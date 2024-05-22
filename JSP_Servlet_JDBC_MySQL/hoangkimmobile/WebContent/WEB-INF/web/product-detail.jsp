@@ -83,7 +83,7 @@
 
 	<!-- Start Shop Detail  -->
 	<sql:setDataSource var="ds" dataSource="jdbc/shoppingdb" />
-	<sql:query dataSource="${ds}" var="results" sql="select * from products where product_id=?">
+	<sql:query dataSource="${ds}" var="results" sql="select * from products where id=?">
 		<sql:param>${param.productID}</sql:param>
 	</sql:query>
 	<sql:query dataSource="${ds}" var="getSold"
@@ -138,13 +138,16 @@
 						<p>${prod.product_brand}</p>
 						<br />
 						<div class="price-box-bar">
-							<c:url var="addToCartURL" value="/AddToCartServlet">
+							<c:url var="addToCart" value="/AddToCartServlet">
 								<c:param name="action" value="add"></c:param>
 								<c:param name="id" value="${param.productID}"></c:param>
 							</c:url>
 							<div class="price-box-bar">
 								<div class="cart-and-bay-btn">
-									<form method="POST" action="${addToCartURL}">
+								<!-- Sequence diagram: AddCart - CNPM
+									 1: click button "Add To Cart" (is sent by User)
+								-->
+									<form method="POST" action="${addToCart}">
 										<button class="btn hvr-hover" type="submit">
 											<fmt:message>product.cart</fmt:message>
 										</button>

@@ -43,7 +43,21 @@ public class ProductService implements IProductService {
 	public List<Product> getProductsPerPage(int currentPage) {
 		return this.productDAO.getProductsPerPage(currentPage);
 	}
-
+	/**
+	 * Sequence diagram: AddCart - CNPM
+	 * 1.1.1: getProducts(id) (is sent by AddToCartServlet)
+	 * 1.1.1.2: List<Product> (is replied by ProductDAO)
+	 */
+	/**
+	 * Sequence diagram: UpdateQuantity - CNPM
+	 * 2.1.1: getProducts(id) (is sent by AddToCartServlet)
+	 * 2.1.1.2: List<Product> (is replied by ProductDAO)
+	 */
+	/**
+	 * Sequence diagram: RemoveItem - CNPM
+	 * 2.1.6: getProducts(id) (is sent by AddToCartServlet)
+	 * 2.1.6.2: List<Product> (is replied by ProductDAO)
+	 */
 	@Override
 	public Product getProducts(int id) {
 		return this.productDAO.getProducts(id).get(0);

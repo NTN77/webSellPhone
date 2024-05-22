@@ -35,42 +35,97 @@ public class AddToCartServlet extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		
 		String action = request.getParameter("action");
 		String id = request.getParameter("id");
 		HttpSession session = request.getSession(true);
-		
+		/**
+		 * Sequence diagram: AddCart - CNPM
+		 * 1.1: addToCart(POST, action, id) (is sent by ProductDetailGUI)
+		 */
 		if (action != null && action.equals("add")) {
+			/**
+			 * Sequence diagram: AddCart - CNPM
+			 * 1.1.2: Product (is replied by ProductService)
+			 */
 			Product p = this.service.getProducts(Integer.parseInt(id));
-			Cart c = (Cart) session.getAttribute("cart");
+//			Cart c = (Cart) session.getAttribute("cart");
+			Cart c = Cart.getInstance();
 			c.add(new Product(p.getId(), p.getName(), p.getDescription(), p.getPrice(), 
 					p.getSrc(), p.getType(), p.getBrand(), 1));
+			/**
+			 * Sequence diagram: AddCart - CNPM
+			 * 1.1.5: setAttribute(cart) (self message)
+			 */
 			session.setAttribute("cart", c);
+			/**
+			 * Sequence diagram: AddCart - CNPM
+			 * 1.1.6: forward(request, response) (send to CartGUI)
+			 */
 			request.getRequestDispatcher("/WEB-INF/web/cart.jsp").forward(request, response);
-
-
-		} else if (action != null && action.equals("updateQuantity")) {
+		} 
+		/**
+		 * Sequence diagram: UpdateQuantity - CNPM
+		 * 2.1: updateProductQuantity(POST, action, id, pQuantity) (is sent by CartGUI)
+		 */
+		else if (action != null && action.equals("updateQuantity")) {
 			int pQuantity = Integer.parseInt(request.getParameter("pQuantity"));
+			/**
+			 * Sequence diagram: UpdateQuantity - CNPM
+			 * 2.1.2: Product (is replied by ProductService)
+			 */
 			Product p = this.service.getProducts(Integer.parseInt(id));
-			Cart c = (Cart) session.getAttribute("cart");			
+			/**
+			 * Sequence diagram: UpdateQuantity - CNPM
+			 * 2.2: getAtrribute(cart) (self message)
+			 */
+			Cart c = (Cart) session.getAttribute("cart");		
 			if (pQuantity > 0) {
 				c.add(new Product(p.getId(), p.getName(), p.getDescription(), p.getPrice(), 
 						p.getSrc(), p.getType(), p.getBrand(), p.getNumber()), pQuantity);
 			} else if(pQuantity == 0) {
-				c.remove(Integer.parseInt(id));
+				c.remove(p);
 			}
+			/**
+			 * Sequence diagram: UpdateQuantity - CNPM
+			 * 2.1.4: setAttribute(cart) (self message)
+			 */
 			session.setAttribute("cart", c);
+			/**
+			 * Sequence diagram: UpdateQuantity - CNPM
+			 * 2.1.5: forward(request, response) (send to CartGUI)
+			 */
 			request.getRequestDispatcher("/WEB-INF/web/cart.jsp").forward(request, response);
-			
-			
-		} else if (action != null && action.equals("delete")) {
+		}
+		/**
+		 * Sequence diagram: RemoveItem - CNPM
+		 * 3.1: deleteURL(POST, action, id) (is sent by CartGUI)
+		 */
+		else if (action != null && action.equals("delete")) {
+			/**
+			 * Sequence diagram: RemoveItem - CNPM
+			 * 3.2: getAtrribute(cart) (self message)
+			 */
 			Cart c = (Cart) session.getAttribute("cart");
-			c.remove(Integer.parseInt(id));
+			/**
+			 * Sequence diagram: RemoveItem - CNPM
+			 * 2.1.7: Product (is replied by ProductService)
+			 */
+			Product p = this.service.getProducts(Integer.parseInt(id));
+			c.remove(p);
+			/**
+			 * Sequence diagram: RemoveItem - CNPM
+			 * 2.1.9: setAttribute(cart) (self message)
+			 */
 			session.setAttribute("cart", c);
+			/**
+			 * Sequence diagram: RemoveItem - CNPM
+			 * 2.1.10: forward(request, response) (send to CartGUI)
+			 */
 			request.getRequestDispatcher("/WEB-INF/web/cart.jsp").forward(request, response);
 		}
 	}

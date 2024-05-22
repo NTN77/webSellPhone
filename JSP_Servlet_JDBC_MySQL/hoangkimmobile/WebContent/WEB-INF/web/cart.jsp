@@ -83,11 +83,13 @@
 												<td class="quantity-box">
 													<div style="display: flex; align-items: center;">
 														<div>
-															<c:url var="updateProductQuantity"
-																value="/AddToCartServlet">
+															<c:url var="updateProductQuantity" value="/AddToCartServlet">
 																<c:param name="action" value="updateQuantity"></c:param>
 																<c:param name="id" value="${product.id}"></c:param>
 															</c:url>
+															<!-- Sequence diagram: UpdateQuantity - CNPM
+									 							 2: click button "Update" (is sent by User)
+															-->
 															<form style="width:120px" method="POST" action="${updateProductQuantity}">
 																<input style="width:50px" class="number-input" type="number" min="0"
 																	name="pQuantity" value="${product.number}"
@@ -102,6 +104,9 @@
 																<c:param name="action" value="delete"></c:param>
 																<c:param name="id" value="${product.id}"></c:param>
 															</c:url>
+															<!-- Sequence diagram: RemoveItem - CNPM
+									 							 3: click button "Delete" (is sent by User)
+															-->
 															<form method="POST" action="${deleteURL}">
 																<button class="btn btn-danger" type="submit">
 																	<fmt:message>cart.delete</fmt:message>
